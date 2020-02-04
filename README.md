@@ -1,3 +1,3 @@
 # MARL_project
-Please check Technical Report for more details
 Multi-Agent Reinforcement Learning Project.  Rutgers CS 2020
+For more details, please check Technical Report.
