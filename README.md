@@ -21,14 +21,14 @@ This project proposes modeling authentic chasing and escapingbehaviors for multi
 
 **First trainning result**
 
-<img src="images/demo1.gif" align="middle" width="3000"/>
+<img src="images/demo1.gif" align="middle" width="500"/>
 
 **Demo in First person view**
 
-<img src="images/demo2.gif" align="middle" width="3000"/>
+<img src="images/demo2.gif" align="middle" width="500"/>
 
 
-##Introduction
+## Introduction
 
 **Problem Statement:** Many situations in real world require artifi-cial agents.However, It is challenging to implement competitive and cooperative behavior in AI agent. Some modern computer gamesattempt to simulate such behavior, in which player and non-playerhostiles compete against each other to avoid being detected or tocatch others.However,their movements are pre-defined by behav-ior trees.With all commands being completely settled by scripts,those characters will only conduct rigid behavior with same patternsuch as following the player or moving along a fixed routine.They cannot dynamically adapt to player's behavior and evolve corre-sponding strategies, which limits their performance in a real-worldapplication.
 
@@ -38,7 +38,7 @@ This project proposes modeling authentic chasing and escapingbehaviors for multi
 
 **Technical Innovations**.  The combination of Imitation Learning and Deep reinforcement learning can dramati-cally reduce the time the agents take to solve the environment. 
 
-##Methods##
+## Methods
 
 * Training is performed with a combination of deep reinforcementlearning(**DRL**) and Generative Adversarial Imitation Learning(**GAIL**).
 
@@ -46,5 +46,7 @@ This project proposes modeling authentic chasing and escapingbehaviors for multi
 
 * Intrinsic procedure (GAIL):
 
-Generative Adversarial Imitation Learning, is a new general framework for directly extracting apolicy from data. It is used to solve the problem of sparse reward in DRL.In this framework, a neural network, the discriminator, is taughtto distinguish whether an observation/action is from a demonstra-tion or produced by the agent. This discriminator can the examinea new observation/action and provide it a reward based on howclose it believes this new observation/action is to the provideddemonstrations. In the training process, for each action the agentmake, the discriminator produce a reward based on how similarthe action is to the actions in the demo. After getting the reward received from GAIL, we send it as one of the intrinsic reward signal to the reinforcement learning model. Then the agent would tryto maximize the reward, thus encouraging the agent to mimic the behaviors in the demo. As the agent making actions more and more similar to the demo actions, the discriminator also keeps trainingon those more similar actions. Thus the discriminator is becoming more and more accurate.
+	Generative Adversarial Imitation Learning, is a new general framework for directly extracting apolicy from data. It is used to solve the problem of sparse reward in DRL.In this framework, a neural network, the discriminator, is taughtto distinguish whether an observation/action is from a demonstra-tion or produced by the agent. This discriminator can the examinea new observation/action and provide it a reward based on howclose it believes this new observation/action is to the provideddemonstrations. In the training process, for each action the agentmake, the discriminator produce a reward based on how similarthe action is to the actions in the demo. After getting the reward received from GAIL, we send it as one of the intrinsic reward signal to the reinforcement learning model. Then the agent would tryto maximize the reward, thus encouraging the agent to mimic the behaviors in the demo. As the agent making actions more and more similar to the demo actions, the discriminator also keeps trainingon those more similar actions. Thus the discriminator is becoming more and more accurate.
+
+More details please check the **slide** & **report**.
 
